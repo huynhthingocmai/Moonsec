@@ -1,6 +1,6 @@
 local player = game.Players.LocalPlayer
 
-if player.Name == "whatdahell" or player.Name == "hoajldh456" or player.Name == "NOOD_Mouse" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
+if player.Name == "whatdahell" or player.Name == "hoajldh456" or player.Name == "NOOD_Mouse" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" or player.Name == "hockmode444" then
     print("buy script")
 else
     player:Kick("buy script discord:nhm_roblox")
@@ -338,8 +338,8 @@ Section3:CreateButton("change item and ", function()
 print("Clicked")
 end)
 
-Section3:CreateButton("hold the item u want no cd", function()
-print("Clicked")
+Section3:CreateToggle("hold the item u want no cd", function(value)
+print(value)
 end)
 
 Section3:CreateToggle("auto use skill 1", function(value)
