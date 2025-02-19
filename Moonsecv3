@@ -320,7 +320,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/nguyenhoangmaiscripte
 print("Clicked")
 end)
 
-local Section3 = Window:NewSection("no cooldown🚫⏳️📄")
+local Section3 = Window:NewSection("auto skill")
 
 Section3:CreateButton("how to use👇", function()
 print("Clicked")
