@@ -1,34 +1,34 @@
 local player = game.Players.LocalPlayer
 
-if player.Name == "whatdahell" or player.Name == "hoajldh456" or player.Name == "NOOD_Mouse" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" or player.Name == "hockmode444" then
+if player.Name == "whatdahell" or player.Name == "hoajldh456" or player.Name == "NOOD_Mouse" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
     print("buy script")
 else
     player:Kick("buy script discord:nhm_roblox")
 end
 
-local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
 
-local Window = Library:NewWindow("⭐️Flandre Hub Premium⭐️")
+local win = DiscordLib:Window("[⭐️FLANDRE HUB PREMIUM⭐️][NGỌC MAI XINH GÁI]")
 
-local Section = Window:NewSection("universal📄")
+local serv = win:Server("MEME ADVENTURE", "")
 
-Section:CreateButton("inf Yield admin", function()
+local drops = serv:Channel("UNIVERSAL📄")
+
+drops:Button("INF YIELD", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-print("Clicked")
 end)
 
-Section:CreateButton("nameless admin", function()
+drops:Button("NAMELESS ADMIN", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))()
-print("Clicked")
 end)
 
-Section:CreateButton("key broad", function()
+drops:Button("KEY BROAD", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
-print("Clicked")
 end)
 
-Section:CreateToggle("kill aura", function(value)
-    getgenv().G = value
+drops:Toggle("KILL AURA",false, function(value)
+getgenv().G = value
     getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
     spawn(function()
         while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
@@ -42,16 +42,14 @@ Section:CreateToggle("kill aura", function(value)
             end
         end
     end)
-print(value)
+print(bool)
 end)
 
-local Section2 = Window:NewSection("auto♾️📄")
+local drops = serv:Channel("AUTO📝")
 
-Section2:CreateButton("this need auto gem", function()
-print("Clicked")
-end)
+drops:Label("auto cabybara need secret grass and auto proxomity prompt")
 
-Section2:CreateToggle("auto cabybara", function(value)
+drops:Toggle("AUTO CABYBARA",false, function(value)
 getgenv().G = value
 getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
 
@@ -77,11 +75,10 @@ spawn(function()
         wait(1) -- Dừng 1 giây giữa mỗi lần dịch chuyển
     end
 end)
-
-print(value)
+print(bool)
 end)
 
-Section2:CreateButton("auto rock chest", function()
+drops:Button("AUTO ROCK CHEST", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
@@ -156,16 +153,15 @@ for _, position in ipairs(positions) do
     triggerPrompt() -- Kiểm tra và kích hoạt ProximityPrompt nếu có
     wait(delayTime)
 end
-print("Clicked")
 end)
 
-Section2:CreateToggle("fishing desert", function(value)
-getgenv().fishingEnabled = value -- Đặt thành false để dừng script
+drops:Toggle("FIAHING DESERT",false, function(value)
+getgenv().fishingEnabled1 = value -- Đặt thành false để dừng script
 
 local player = game.Players.LocalPlayer
 
 while wait(0) do
-    if getgenv().fishingEnabled then
+    if getgenv().fishingEnabled1 then
         local fishingEvent = workspace:FindFirstChild(player.Name) 
             and workspace[player.Name]:FindFirstChild("Fishing") 
             and workspace[player.Name].Fishing:FindFirstChild("Desert") 
@@ -178,17 +174,16 @@ while wait(0) do
         end
     end
 end
-
-print(value)
+print(bool)
 end)
 
-Section2:CreateToggle("fishing lava", function(value)
-getgenv().fishingEnabled = value -- Đặt thành false để dừng script
+drops:Toggle("FISHING LAVA",false, function(value)
+getgenv().fishingEnabled2 = value -- Đặt thành false để dừng script
 
 local player = game.Players.LocalPlayer
 
 while wait(0) do
-    if getgenv().fishingEnabled then
+    if getgenv().fishingEnabled2 then
         local fishingEvent = workspace:FindFirstChild(player.Name) 
             and workspace[player.Name]:FindFirstChild("Fishing") 
             and workspace[player.Name].Fishing:FindFirstChild("Lava") 
@@ -201,17 +196,16 @@ while wait(0) do
         end
     end
 end
-
-print(value)
+print(bool)
 end)
 
-Section2:CreateToggle("fishing snow", function(value)
-getgenv().fishingEnabled = value -- Đặt thành false để dừng script
+drops:Toggle("FISHING SNOW",false, function(value)
+getgenv().fishingEnabled3 = value -- Đặt thành false để dừng script
 
 local player = game.Players.LocalPlayer
 
 while wait(0) do
-    if getgenv().fishingEnabled then
+    if getgenv().fishingEnabled3 then
         local fishingEvent = workspace:FindFirstChild(player.Name) 
             and workspace[player.Name]:FindFirstChild("Fishing") 
             and workspace[player.Name].Fishing:FindFirstChild("Snow") 
@@ -225,10 +219,10 @@ while wait(0) do
     end
 end
 
-print(value)
+print(bool)
 end)
 
-Section2:CreateToggle("auto claim gem", function(value)
+drops:Toggle("AUTO PROXIMITY PROMPT",false, function(value)
 getgenv().AutoProximity = value -- Bật/tắt script bằng cách đặt thành false
 
 local player = game.Players.LocalPlayer
@@ -266,13 +260,14 @@ end
 
 -- Chạy script tự động
 task.spawn(activateClosestPrompt)
-
-print(value)
+print(bool)
 end)
 
-local Section = Window:NewSection("others📝")
+drops:Label("auto pray release at next week(im not sure)")
 
-Section:CreateButton("teleport to drop tool", function()
+local drops = serv:Channel("OTHERS📄")
+
+drops:Button("TELEPORT TO DROP TOOLS", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart") -- Phần trung tâm của nhân vật
@@ -290,10 +285,9 @@ for _, item in pairs(workspace:GetChildren()) do
         break -- Chỉ dịch chuyển đến một vật phẩm đầu tiên tìm thấy
     end
 end
-print("Clicked")
 end)
 
-Section:CreateButton("use all helmet(not real)", function()
+drops:Button("USE ALL HELMET(NOT REAL)", function()
 while wait() do
     local remote = game:GetService("ReplicatedStorage").OtherThing.Tools
 
@@ -320,33 +314,19 @@ while wait() do
         warn("Không tìm thấy RemoteEvent hoặc FireServer không tồn tại!")
     end
 end
-
 end)
 
-Section:CreateButton("this op(idk)", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/nguyenhoangmaiscripter/Executor/refs/heads/main/FlandreHub"))()
-print("Clicked")
-end)
+local drops = serv:Channel("NO COOLDOWN🚫⏳️📄")
 
-local Section3 = Window:NewSection("no cooldown🚫⏳️📄")
+drops:Label("how to use no cd👇")
 
-Section3:CreateButton("how to use👇", function()
-print("Clicked")
-end)
+drops:Label("after script use skill,change the item and change to item u want no cd and hold it and change")
 
-Section3:CreateButton("change item and ", function()
-print("Clicked")
-end)
-
-Section3:CreateButton("hold the item u want no cd", function()
-print("Clicked")
-end)
-
-Section3:CreateToggle("auto use skill 1", function(value)
-getgenv().AutoUseTool = value -- Biến để bật/tắt script
+drops:Toggle("AUTO USE SKILL 1",false, function(value)
+getgenv().AutoUseTool1 = value -- Biến để bật/tắt script
 
 spawn(function()
-    while AutoUseTool do
+    while AutoUseTool1 do
         local player = game.Players.LocalPlayer
         local char = player.Character
 
@@ -360,15 +340,14 @@ spawn(function()
         wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
 end)
-
-print(value)
+print(bool)
 end)
 
-Section3:CreateToggle("auto use skill 2", function(value)
-getgenv().AutoUseTool = value -- Biến để bật/tắt script
+drops:Toggle("AUTO USE SKILL 2",false, function(value)
+getgenv().AutoUseTool2 = value -- Biến để bật/tắt script
 
 spawn(function()
-    while AutoUseTool do
+    while AutoUseTool2 do
         local player = game.Players.LocalPlayer
         local char = player.Character
 
@@ -382,15 +361,14 @@ spawn(function()
         wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
 end)
-
-print(value)
+print(bool)
 end)
 
-Section3:CreateToggle("auto use skill 3", function(value)
-getgenv().AutoUseTool = value -- Biến để bật/tắt script
+drops:Toggle("AUTO USE SKILL 3",false, function(value)
+getgenv().AutoUseTool3 = value -- Biến để bật/tắt script
 
 spawn(function()
-    while AutoUseTool do
+    while AutoUseTool3 do
         local player = game.Players.LocalPlayer
         local char = player.Character
 
@@ -404,77 +382,68 @@ spawn(function()
         wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
 end)
-
-print(value)
+print(bool)
 end)
 
-local Section4 = Window:NewSection("teleports🏃‍♂️‍➡️📄")
+local drops = serv:Channel("TELEPORT")
 
-Section4:CreateButton("chad island", function()
-    local player = game.Players.LocalPlayer
+drops:Button("CHAD ISLAND", function()
+local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(-709, 10, 509)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("big brain island", function()
-    local player = game.Players.LocalPlayer
+drops:Button("BIG BRAIN ISLAND", function()
+local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(556, 10, 506)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("kenjaku fight room", function()
-    local player = game.Players.LocalPlayer
+drops:Button("KENJAKU FIGHT ROOM", function()
+local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(5217.044921875, 2260.821533203125, -4130.38330078125)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("desert island", function()
-    local player = game.Players.LocalPlayer
+drops:Button("DESERT ISLAND", function()
+local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(-340.91278076171875, 18.29494857788086, -997.4833374023438)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("desert fishing", function()
-    local player = game.Players.LocalPlayer
+drops:Button("DESERT FISHING", function()
+local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(890.1141967773438, 9.118748664855957, -828.7176513671875)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("cabybara fight room", function()
-    local player = game.Players.LocalPlayer
+drops:Button("CABYBARA FIGHT ROOM ", function()
+local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(5432.73046875, 1755.6904296875, 610.4720458984375)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("maxwell fight room", function()
-    local player = game.Players.LocalPlayer
+drops:Button("MAXWELL FIGHT ROOM", function()
+local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(-14569.0859375, 4700.61181640625, -3191.745361328125)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("magma island", function()
-    local player = game.Players.LocalPlayer
+drops:Button("MAGMA ISLAND", function()
+local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(2801.695556640625, 11.266153335571289, -180.07965087890625)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("diavolo boss", function()
+drops:Button("DIAVOLO BOSS", function()
 -- diavolo
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -485,10 +454,9 @@ local targetPosition = Vector3.new(2238.60400390625, 20.818754196166992, 649.405
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("dog fight room", function()
+drops:Button("DOG FIGHT ROOM", function()
 -- let me do it dog
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -499,10 +467,16 @@ local targetPosition = Vector3.new(9000.396484375, 1750.1824951171875, -3042.721
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section4:CreateButton("magma fishing", function()
+drops:Button("MAGMA RAID", function()
+local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local targetPosition = Vector3.new(3485.044677734375, 23.636802673339844, -1055.036865234375)
+    character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+end)
+
+drops:Button("LAVA FISHING", function()
 -- lava fishing
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -513,14 +487,9 @@ local targetPosition = Vector3.new(3871.954833984375, 16.650545120239258, 572.73
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-local Section5 = Window:NewSection("teleports 2🏃‍♂️‍➡️📄")
-
-Section5:CreateButton("snow island", function()
--- snow
--- Lấy nhân vật người chơi
+drops:Button("SNOW ISLAND", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -530,12 +499,9 @@ local targetPosition = Vector3.new(-2597.051513671875, 32.039512634277344, -986.
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section5:CreateButton("praying", function()
--- snow
--- Lấy nhân vật người chơi
+drops:Button("PRAYING", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -545,11 +511,9 @@ local targetPosition = Vector3.new(-3513.5810546875, 400.43157958984375, -642.65
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section5:CreateButton("snow fishing", function()
--- snow fishing
+drops:Button("SNOW FISHING", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -559,12 +523,9 @@ local targetPosition = Vector3.new(-3072.841064453125, 10.895713806152344, 300.0
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section5:CreateButton("misaka fight room", function()
--- railgun
--- Lấy nhân vật người chơi
+drops:Button("MISAKA FIGHT ROOM", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -574,12 +535,9 @@ local targetPosition = Vector3.new(-3605, 1250, 10453)
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section5:CreateButton("dagon fight room", function()
--- dagon
--- Lấy nhân vật người chơi
+drops:Button("DAGON FIGHT ROOM", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -589,11 +547,9 @@ local targetPosition = Vector3.new(1634, 22071, 59964)
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section5:CreateButton("dagon domain", function()
--- dagon domain
+drops:Button("DAGON DOMAIN", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -603,12 +559,9 @@ local targetPosition = Vector3.new(27052.248046875, 24330.271484375, 44108.42187
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section5:CreateButton("mahito fight room", function()
--- mahito
--- Lấy nhân vật người chơi
+drops:Button("MAHITO FIGHT ROOM", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -618,11 +571,9 @@ local targetPosition = Vector3.new(-37975, 21990, 67347)
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-Section5:CreateButton("mahito domain", function()
--- mahito domaim
+drops:Button("MAHITO DOMAIN", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -632,11 +583,36 @@ local targetPosition = Vector3.new(-27548.91015625, 16200.41015625, 5832.3046875
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-print("Clicked")
 end)
 
-local Section6 = Window:NewSection("❗️credits❗️")
+local drops = serv:Channel("CREDITS")
 
-Section6:CreateButton("❗️script by 54hz❗️", function()
-print("Clicked")
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
+end)
+
+drops:Button("SCRIPT MAKE BY 54HZ", function()
 end)
