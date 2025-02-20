@@ -385,7 +385,7 @@ end)
 print(bool)
 end)
 
-local drops = serv:Channel("TELEPORT")
+local drops = serv:Channel("TELEPORT📄")
 
 drops:Button("CHAD ISLAND", function()
 local player = game.Players.LocalPlayer
@@ -585,7 +585,7 @@ local targetPosition = Vector3.new(-27548.91015625, 16200.41015625, 5832.3046875
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
 end)
 
-local drops = serv:Channel("CREDITS")
+local drops = serv:Channel("CREDITS❗️")
 
 drops:Button("SCRIPT MAKE BY 54HZ", function()
 end)
