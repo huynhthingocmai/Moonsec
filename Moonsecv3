@@ -1,6 +1,6 @@
 local player = game.Players.LocalPlayer
 
-if player.Name == "whatdahell" or player.Name == "hoajldh456" or player.Name == "NOOD_Mouse" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
+if player.Name == "whatdahell" or player.Name == "hoajldh456" or player.Name == "NOOD_Mouse" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" or player.Name == "Chad761992" then
     print("buy script")
 else
     player:Kick("buy script discord:nhm_roblox")
