@@ -278,14 +278,8 @@ local toolName = "Summon The Treasure"
 local player = game.Players.LocalPlayer
 local backpack = player:FindFirstChild("Backpack")
 
-while getgenv().autoEquip do
-    -- Chuyển qua tool "Black Flash Kick"
-    game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Malevolent Shrine", "Special")
-    
-    -- Chuyển ngay lập tức qua tool "Summon The Treasure"
-    game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Summon The Treasure", "Special")
-    
-    -- Liên tục trang bị tool "Summon The Treasure" nếu có trong backpack
+-- Tạo một thread riêng để liên tục trang bị "Summon The Treasure"
+task.spawn(function()
     while getgenv().autoEquip do
         if backpack then
             local tool = backpack:FindFirstChild(toolName)
@@ -299,9 +293,20 @@ while getgenv().autoEquip do
         end
         task.wait(0.5) -- Kiểm tra và trang bị tool mỗi 0.5 giây
     end
-    
-    -- Đợi 40 giây trước khi lặp lại vòng lặp chính
-    task.wait(37)
+end)
+
+while getgenv().autoEquip do
+    -- Chuyển qua tool "Black Flash Kick"
+    game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Black Flash Kick", "Special")
+
+    -- Đợi 0.5 giây rồi đổi sang "Summon The Treasure"
+    task.wait(0.5)
+
+    -- Chuyển ngay lập tức qua tool "Summon The Treasure"
+    game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Summon The Treasure", "Special")
+
+    -- Đợi 40 giây trước khi tiếp tục lặp
+    task.wait(40)
 end
 
 print(bool)
