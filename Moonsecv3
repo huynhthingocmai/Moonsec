@@ -304,7 +304,7 @@ while getgenv().autoEquip do
             else
                 warn("Backpack not found")
             end
-            task.wait(0.5) -- Kiểm tra và trang bị tool mỗi 0.5 giây
+            task.wait(2) -- Kiểm tra và trang bị tool mỗi 0.5 giây
         end
     end)
     
