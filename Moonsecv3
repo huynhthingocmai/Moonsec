@@ -161,7 +161,7 @@ for _, position in ipairs(positions) do
 end
 end)
 
-drops:Toggle("FIAHING DESERT",false, function(value)
+drops:Toggle("FISHING DESERT",false, function(value)
 getgenv().fishingEnabled1 = value -- Đặt thành false để dừng script
 
 local player = game.Players.LocalPlayer
