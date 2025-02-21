@@ -297,7 +297,7 @@ end)
 
 while getgenv().autoEquip do
     -- Chuyển qua tool "Black Flash Kick"
-    game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Black Flash Kick", "Special")
+    game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Malevolent Shrine", "Special")
 
     -- Đợi 0.5 giây rồi đổi sang "Summon The Treasure"
     task.wait(0.5)
@@ -306,7 +306,7 @@ while getgenv().autoEquip do
     game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Summon The Treasure", "Special")
 
     -- Đợi 40 giây trước khi tiếp tục lặp
-    task.wait(40)
+    task.wait(50)
 end
 
 print(bool)
