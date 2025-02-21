@@ -51,21 +51,6 @@ end)
 print(bool)
 end)
 
-drops:Toggle("LOOP GRABTOOLS",false, function(value)
-getgenv().autograb = value
- spawn(function() 
- while autograb==true do wait() 
- if not getgenv().autograb then break end 
- local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") 
- for _, child in ipairs(workspace:GetChildren()) do 
- if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then 
- humanoid:EquipTool(child) 
- end 
- end 
- end 
- end) 
-end)
-
 local drops = serv:Channel("AUTO📝")
 
 drops:Label("auto cabybara need secret grass and auto proxomity prompt")
@@ -352,6 +337,20 @@ for _, item in pairs(workspace:GetChildren()) do
         break -- Chỉ dịch chuyển đến một vật phẩm đầu tiên tìm thấy
     end
 end
+end)
+drops:Toggle("LOOP GRABTOOLS",false, function(value)
+getgenv().autograb = value
+ spawn(function() 
+ while autograb==true do wait() 
+ if not getgenv().autograb then break end 
+ local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") 
+ for _, child in ipairs(workspace:GetChildren()) do 
+ if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then 
+ humanoid:EquipTool(child) 
+ end 
+ end 
+ end 
+ end) 
 end)
 
 drops:Button("USE ALL HELMET(NOT REAL)", function()
