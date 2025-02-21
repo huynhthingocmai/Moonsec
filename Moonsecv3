@@ -278,34 +278,37 @@ local toolName = "Summon The Treasure"
 local player = game.Players.LocalPlayer
 local backpack = player:FindFirstChild("Backpack")
 
--- Tạo một thread riêng để liên tục trang bị "Summon The Treasure"
-task.spawn(function()
-    while getgenv().autoEquip do
-        if backpack then
-            local tool = backpack:FindFirstChild(toolName)
-            if tool then
-                player.Character.Humanoid:EquipTool(tool)
-            else
-                warn("Tool not found in backpack")
-            end
-        else
-            warn("Backpack not found")
-        end
-        task.wait(0.5) -- Kiểm tra và trang bị tool mỗi 0.5 giây
-    end
-end)
-
 while getgenv().autoEquip do
     -- Chuyển qua tool "Black Flash Kick"
     game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Malevolent Shrine", "Special")
-
+    
     -- Đợi 0.5 giây rồi đổi sang "Summon The Treasure"
     task.wait(0.5)
-
+    
     -- Chuyển ngay lập tức qua tool "Summon The Treasure"
     game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Summon The Treasure", "Special")
-
-    -- Đợi 40 giây trước khi tiếp tục lặp
+    
+    -- Đợi 2 giây trước khi bắt đầu tự động trang bị tool
+    task.wait(2)
+    
+    -- Liên tục trang bị tool "Summon The Treasure" nếu có trong backpack
+    task.spawn(function()
+        while getgenv().autoEquip do
+            if backpack then
+                local tool = backpack:FindFirstChild(toolName)
+                if tool then
+                    player.Character.Humanoid:EquipTool(tool)
+                else
+                    warn("Tool not found in backpack")
+                end
+            else
+                warn("Backpack not found")
+            end
+            task.wait(0.5) -- Kiểm tra và trang bị tool mỗi 0.5 giây
+        end
+    end)
+    
+    -- Đợi 50 giây trước khi tiếp tục lặp
     task.wait(50)
 end
 
