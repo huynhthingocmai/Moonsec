@@ -1,6 +1,6 @@
 local player = game.Players.LocalPlayer
 
-if player.Name == "who" or player.Name == "hoajldh456" or player.Name == "NOOD_Mouse" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
+if player.Name == "whatdahell" or player.Name == "hoajldh456" or player.Name == "NOOD_Mouse" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
     print("buy script")
 else
     player:Kick("buy script discord:nhm_roblox")
@@ -29,19 +29,25 @@ end)
 
 drops:Toggle("KILL AURA",false, function(value)
 getgenv().G = value
-    getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
-    spawn(function()
-        while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
-            wait(1)
-            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
-            sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
-            for _, d in pairs(game.Workspace:GetDescendants()) do
-                if d:IsA("Humanoid") and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
+
+spawn(function()
+    while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
+        wait(1)
+        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+        sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+        
+        for _, d in pairs(game.Workspace:GetDescendants()) do
+            if d:IsA("Humanoid") then
+                local plr = game.Players:GetPlayerFromCharacter(d.Parent)
+                if not plr then  -- Nếu không phải nhân vật của người chơi thì áp dụng kill aura
                     d.Health = 0
                 end
             end
         end
-    end)
+    end
+end)
+
 print(bool)
 end)
 
@@ -155,7 +161,7 @@ for _, position in ipairs(positions) do
 end
 end)
 
-drops:Toggle("FISHING DESERT",false, function(value)
+drops:Toggle("FIAHING DESERT",false, function(value)
 getgenv().fishingEnabled1 = value -- Đặt thành false để dừng script
 
 local player = game.Players.LocalPlayer
@@ -260,6 +266,44 @@ end
 
 -- Chạy script tự động
 task.spawn(activateClosestPrompt)
+print(bool)
+end)
+
+drops:Label("need malevolent shrine and summon the treasure👇")
+
+drops:Toggle("AUTO MAHOGARA BOSS(FREEZE RISK)",false, function(value)
+getgenv().autoEquip = value
+
+local toolName = "Summon The Treasure"
+local player = game.Players.LocalPlayer
+local backpack = player:FindFirstChild("Backpack")
+
+while getgenv().autoEquip do
+    -- Chuyển qua tool "Black Flash Kick"
+    game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Malevolent Shrine", "Special")
+    
+    -- Chuyển ngay lập tức qua tool "Summon The Treasure"
+    game:GetService("ReplicatedStorage").OtherThing.Tools:FireServer("Summon The Treasure", "Special")
+    
+    -- Liên tục trang bị tool "Summon The Treasure" nếu có trong backpack
+    while getgenv().autoEquip do
+        if backpack then
+            local tool = backpack:FindFirstChild(toolName)
+            if tool then
+                player.Character.Humanoid:EquipTool(tool)
+            else
+                warn("Tool not found in backpack")
+            end
+        else
+            warn("Backpack not found")
+        end
+        task.wait(0.5) -- Kiểm tra và trang bị tool mỗi 0.5 giây
+    end
+    
+    -- Đợi 40 giây trước khi lặp lại vòng lặp chính
+    task.wait(37)
+end
+
 print(bool)
 end)
 
@@ -385,7 +429,7 @@ end)
 print(bool)
 end)
 
-local drops = serv:Channel("TELEPORT📄")
+local drops = serv:Channel("TELEPORT")
 
 drops:Button("CHAD ISLAND", function()
 local player = game.Players.LocalPlayer
@@ -585,7 +629,7 @@ local targetPosition = Vector3.new(-27548.91015625, 16200.41015625, 5832.3046875
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
 end)
 
-local drops = serv:Channel("CREDITS❗️")
+local drops = serv:Channel("CREDITS")
 
 drops:Button("SCRIPT MAKE BY 54HZ", function()
 end)
