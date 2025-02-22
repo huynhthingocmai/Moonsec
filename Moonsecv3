@@ -11,7 +11,7 @@ local DiscordLib =
 
 local win = DiscordLib:Window("[⭐️FLANDRE HUB PREMIUM⭐️][NGỌC MAI XINH GÁI]")
 
-local serv = win:Server("MEME ADVENTURE", "")
+local serv = win:Server("MEME ADVENTURE", "rbxassetid://129480702328610")
 
 local drops = serv:Channel("UNIVERSAL📄")
 
