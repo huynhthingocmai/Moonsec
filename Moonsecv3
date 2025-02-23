@@ -11,6 +11,12 @@ local DiscordLib =
 
 local win = DiscordLib:Window("[⭐️FLANDRE HUB PREMIUM⭐️][NGỌC MAI XINH GÁI]")
 
+local per = game:GetService("Players").LocalPlayer.Name
+ DiscordLib:Notification("whitelisted!","Xin Chào! "..""..per..".                                              ".." ❤️cảm ơn đã sài script của Ngọc Mai❤️(54hz)","click here") 
+
+local per = game:GetService("Players").LocalPlayer.Name
+ DiscordLib:Notification("whitelisted!","Hello! "..""..per..".                                              ".." ❤️thank for use Ngoc Mai's script❤️(54hz)","click here") 
+
 local serv = win:Server("MEME ADVENTURE", "rbxassetid://129480702328610")
 
 local drops = serv:Channel("UNIVERSAL📄")
@@ -451,7 +457,7 @@ end)
 print(bool)
 end)
 
-local drops = serv:Channel("TELEPORT")
+local drops = serv:Channel("TELEPORT🏃‍♂️‍➡️📄")
 
 drops:Button("CHAD ISLAND", function()
 local player = game.Players.LocalPlayer
@@ -651,7 +657,7 @@ local targetPosition = Vector3.new(-27548.91015625, 16200.41015625, 5832.3046875
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
 end)
 
-local drops = serv:Channel("CREDITS")
+local drops = serv:Channel("CREDITS❗️")
 
 drops:Button("SCRIPT MAKE BY 54HZ", function()
 end)
